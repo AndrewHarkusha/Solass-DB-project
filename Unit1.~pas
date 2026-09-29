@@ -1,0 +1,124 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, Grids, DBGrids, ComCtrls, TabNotBk, DBCtrls,
+  DB, DBTables;
+
+type
+  TfmMain = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Menu: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    meClient: TMenuItem;
+    MainTable: TTabbedNotebook;
+    dbgUsers: TDBGrid;
+    dbgClient: TDBGrid;
+    N7: TMenuItem;
+    dbgZakaz: TDBGrid;
+    N6: TMenuItem;
+    GroupBox1: TGroupBox;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    DBComboBox6: TDBComboBox;
+    DBComboBox7: TDBComboBox;
+    DBComboBox8: TDBComboBox;
+    DBComboBox9: TDBComboBox;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBComboBox1: TDBComboBox;
+    DBComboBox2: TDBComboBox;
+    DBComboBox3: TDBComboBox;
+    DBComboBox4: TDBComboBox;
+    dbgProject: TDBGrid;
+    Query1: TQuery;
+    procedure N2Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure dbgUsersDblClick(Sender: TObject);
+    procedure meClientClick(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure dbgClientDblClick(Sender: TObject);
+    procedure dbgZakazDblClick(Sender: TObject);
+    procedure DBComboBox1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmMain: TfmMain;
+
+implementation
+
+uses Unit3,Unit2,Unit4,Unit6,uZakaz,Unit7;
+{$R *.dfm}
+
+procedure TfmMain.N2Click(Sender: TObject);
+begin
+ Close;
+ Unit2.fmLogin.Close;
+end;
+
+procedure TfmMain.N3Click(Sender: TObject);
+begin
+  Unit2.fmLogin.Show;
+end;
+
+procedure TfmMain.N5Click(Sender: TObject);
+begin
+  Unit3.fmUsers.Show;
+end;
+
+procedure TfmMain.N6Click(Sender: TObject);
+begin
+  Unit7.fmProject.Show;
+end;
+
+procedure TfmMain.dbgUsersDblClick(Sender: TObject);
+begin
+  Unit3.fmUsers.Show;
+end;
+
+procedure TfmMain.meClientClick(Sender: TObject);
+begin
+    Unit6.fmClient.Show;
+end;
+
+procedure TfmMain.N7Click(Sender: TObject);
+begin
+   uZakaz.fmZakaz.Show;
+end;
+
+procedure TfmMain.dbgClientDblClick(Sender: TObject);
+begin
+Unit6.fmClient.Show;
+end;
+
+procedure TfmMain.dbgZakazDblClick(Sender: TObject);
+begin
+  uZakaz.fmZakaz.Show;
+end;
+
+procedure TfmMain.DBComboBox1Click(Sender: TObject);
+begin
+ Query1.ExecSQL;
+ ShowMessage(Query1.SQL.Text);
+ DBComboBox1.Items:= Query1.FieldList;
+end;
+
+end.

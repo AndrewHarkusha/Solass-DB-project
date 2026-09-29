@@ -1,0 +1,29 @@
+program Project1;
+
+uses
+  Forms,
+  Unit2 in 'Unit2.pas' {Form2},
+  Unit1 in 'Unit1.pas' {fmMain},
+  Unit3 in 'Unit3.pas' {Form3},
+  Unit4 in 'Unit4.pas' {Form4},
+  Unit5 in 'Unit5.pas' {DataModule5: TDataModule},
+  Unit6 in 'Unit6.pas' {fmClient},
+  uZakaz in 'uZakaz.pas' {fmZakaz},
+  uEtaps in 'uEtaps.pas' {fmEtaps},
+  Unit7 in 'Unit7.pas' {fmProject};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  //Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TfmMain, fmMain);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TDataModule5, DataModule5);
+  Application.CreateForm(TfmClient, fmClient);
+  Application.CreateForm(TfmZakaz, fmZakaz);
+  Application.CreateForm(TfmEtaps, fmEtaps);
+  Application.CreateForm(TfmProject, fmProject);
+  Application.Run;
+end.

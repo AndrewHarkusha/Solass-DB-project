@@ -1,0 +1,130 @@
+object DataModule5: TDataModule5
+  OldCreateOrder = False
+  Left = 192
+  Top = 118
+  Height = 531
+  Width = 753
+  object dsUsers: TDataSource
+    DataSet = tbUsers
+    Left = 48
+    Top = 32
+  end
+  object tbUsers: TTable
+    DatabaseName = 'zsolass'
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Fio'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Utype'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Otdel'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Login'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'Password'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'Datein'
+        DataType = ftDate
+      end
+      item
+        Name = 'Dateout'
+        DataType = ftDate
+      end
+      item
+        Name = 'Stavka'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Razrabotka_p'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Proizvodstvo_p'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Dostup'
+        DataType = ftFloat
+      end
+      item
+        Name = 'Description'
+        DataType = ftMemo
+        Size = 100
+      end>
+    IndexDefs = <
+      item
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end>
+    IndexFieldNames = 'ID'
+    StoreDefs = True
+    TableName = 'user.DB'
+    Left = 48
+    Top = 104
+  end
+  object tbClient: TTable
+    Active = True
+    DatabaseName = 'zsolass'
+    TableName = 'client.db'
+    Left = 112
+    Top = 104
+  end
+  object dsClient: TDataSource
+    DataSet = tbClient
+    Left = 112
+    Top = 32
+  end
+  object dsZakaz: TDataSource
+    DataSet = tbZakaz
+    Left = 176
+    Top = 32
+  end
+  object tbZakaz: TTable
+    Active = True
+    DatabaseName = 'zsolass'
+    TableName = 'zakaz.db'
+    Left = 176
+    Top = 104
+  end
+  object dsEtaps: TDataSource
+    DataSet = tbEtaps
+    Left = 240
+    Top = 32
+  end
+  object tbEtaps: TTable
+    Active = True
+    DatabaseName = 'zsolass'
+    TableName = 'etaps.db'
+    Left = 237
+    Top = 104
+  end
+  object dsProject: TDataSource
+    DataSet = tdProject
+    Left = 304
+    Top = 32
+  end
+  object tdProject: TTable
+    Active = True
+    DatabaseName = 'zsolass'
+    TableName = 'project.DB'
+    Left = 301
+    Top = 104
+  end
+end
